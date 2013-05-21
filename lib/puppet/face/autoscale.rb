@@ -1,4 +1,3 @@
-require 'puppet'
 require 'puppet/face'
 
 Puppet::Face.define(:autoscale, '0.0.1') do
