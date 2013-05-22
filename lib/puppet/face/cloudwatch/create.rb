@@ -3,22 +3,7 @@ require 'puppet/face/cloudwatch'
 require 'fog'
 
 Puppet::Face.define :cloudwatch, '0.0.1' do
-    #action :createmetric do
-        #summary 'Create a CloudWatch metric.'
-
-        #Puppet::CloudPack.add_list_options(self)
-
-        #when_invoked do |options|
-            #cw = Fog::AWS::CloudWatch.new(
-                #:region => options[:region]
-            #)
-
-            #metric = cw.metrics.create(
-            #)
-        #end
-    #end
-
-    action :createalarm do
+    action :create do
         summary 'Create a CloudWatch alarm.'
 
         Puppet::CloudPack.add_list_options(self)

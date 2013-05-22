@@ -5,10 +5,16 @@ require 'fog'
 Puppet::Face.define :autoscale, '0.0.1' do
     action :createconfig do
         summary "Create an autoscale launch configuration."
+        #arguments "<data>"
 
         Puppet::CloudPack.add_list_options(self)
 
+        options "--image IMAGE" do
+            summary "Amazon Instance"
+        end
+
         when_invoked do |options|
+            #puts YAML::dump(data)
             autoscale = Fog::AWS::AutoScaling.new(
                 :region => options[:region]
             )

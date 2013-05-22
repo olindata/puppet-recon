@@ -3,7 +3,7 @@ require 'puppet/face/autoscale'
 require 'fog'
 
 Puppet::Face.define :autoscale, '0.0.1' do
-    action :config do
+    action :configs do
         summary 'List autoscale launch configurations.'
 
         Puppet::CloudPack.add_list_options(self)
